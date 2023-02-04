@@ -10,10 +10,10 @@ function App() {
         style={{ textAlign: 'center' }}
         className="text-white"
       >
-        Notes App
+        Notes-App
       </h1>
       <div className="text-center text-light">
-        Made by
+        Created by
         {' '}
         <a href="https://github.com/argf013" target="_blank" rel="noreferrer">Arfa</a>
         {' '}

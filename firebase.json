@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "catatan1",
     "public": "build",
     "ignore": [
       "firebase.json",
