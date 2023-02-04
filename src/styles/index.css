@@ -3,7 +3,7 @@
 .alert {
     animation: fadeOut;
     /* referring directly to the animation's @keyframe declaration */
-    animation-duration: 3s;
+    animation-duration: 6s;
     /* don't forget to set a duration! */
 
 }
@@ -21,4 +21,8 @@ hr {
 
 a {
     text-decoration: none !important;
+    color: aquamarine!important;
+}
+a:hover {
+    color: white!important;
 }

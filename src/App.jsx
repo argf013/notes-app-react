@@ -15,10 +15,11 @@ function App() {
       <div className="text-center text-light">
         Created by
         {' '}
-        <a href="https://github.com/argf013" target="_blank" rel="noreferrer">Arfa</a>
+        <a href="https://github.com/argf013" target="_blank" rel="noreferrer">Argf</a>
         {' '}
       </div>
       <Add />
+      <h3 className="text-light mt-5 text-center">Your Notes:</h3>
       <View />
     </div>
 

@@ -64,13 +64,13 @@ function View() {
 
   return (
     <div className="container text-center mt-5 bg-dark">
-      <div className="row row-cols-1 row-cols-lg-4 g-2 g-lg-3 mt-3 mb-5 bg-dark">
+      <div className="row row-cols-1 row-cols-lg-5 g-2 g-lg-3 mb-5 bg-dark">
         {notes.map((note) => (
-          <div className="col card border-light bg-dark text-light" key={note.id}>
+          <div className="col card border-light bg-dark text-light mx-auto" key={note.id} style={{ width: '18em' }}>
             <h5 className="mt-3 mx-auto">
               {note.title}
             </h5>
-            <div className="card bg-dark mx-auto" style={{ width: '18em' }}>
+            <div className="card bg-dark mx-auto" style={{ width: '16em' }}>
               {note.content}
             </div>
 
