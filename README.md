@@ -1,10 +1,6 @@
-# TodoList
+# Notes App
 
-Aplikasi untuk mencatat tugas harian menggunakan react.js dan express.js
-## Cara Menjalankan Aplikasi
-### `Menjalankan node server.js`
-
-Buka Folder server, buka folder tersebut menggunakan git bash atau vscode, kemudian di terminal ketikan "node server.js"
+Aplikasi untuk mencatat menggunakan react.js dan express.js
 
 ### `npm start`
 
