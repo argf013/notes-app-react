@@ -1,0 +1,5 @@
+@media only screen and (max-width: 414px) {
+    .card {
+        width: 18em;
+    }
+}

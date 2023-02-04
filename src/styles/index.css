@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
+
+.alert {
+    animation: fadeOut;
+    /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 3s;
+    /* don't forget to set a duration! */
+
+}
+
+* {
+    margin-top: 1em;
+    font-family: Quicksand;
+    font-weight: bold !important;
+}
+
+
+hr {
+    width: 100px;
+}
+
+a {
+    text-decoration: none !important;
+}
