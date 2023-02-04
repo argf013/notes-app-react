@@ -6,6 +6,7 @@ import firebaseConfig from '../config/firebaseConfig';
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const coll = collection(db, 'notes');
 
 function Add() {
   // State to hold the note data
@@ -24,14 +25,14 @@ function Add() {
   const clearErrorMessage = () => {
     setTimeout(() => {
       setErrorMessage('');
-    }, 2000);
+    }, 5000);
   };
 
   // Function to clear the success message after 2 seconds
   const clearSuccessMessage = () => {
     setTimeout(() => {
       setSuccessMessage('');
-    }, 2000);
+    }, 5000);
   };
 
   // Function to handle form submit
@@ -45,7 +46,7 @@ function Add() {
     }
 
     try {
-      await addDoc(collection(db, 'notes'), note);
+      await addDoc(coll, note);
       setSuccessMessage('Added');
       clearSuccessMessage();
       console.log('Add Notes Success');
@@ -64,7 +65,7 @@ function Add() {
       <form onSubmit={handleSubmit} className="card text-bg-dark mx-auto border-light" style={{ width: '18em' }}>
         <div className="card-body">
           <input
-            className="form-control  text-bg-dark"
+            className="form-control text-bg-dark"
             type="text"
             placeholder="Title..."
             value={note.title}
