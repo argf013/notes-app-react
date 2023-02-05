@@ -26,5 +26,11 @@ To run the application in development mode, run the following command:
 
 `npm start`
 
-To create a production version of the application, run the following command:
+To create a production version of the application, run the following command: \
+\
 `npm run build`
+
+##Preview
+![prev_1](https://i.ibb.co/rHZz7Vn/Mobile-1.png)
+![prev_2](https://i.ibb.co/VYWjDCS/Mobile-2.png)
+
