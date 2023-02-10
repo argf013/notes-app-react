@@ -1,12 +1,4 @@
-/* eslint-disable no-alert */
 import React, { useState } from 'react';
-import { collection, addDoc, getFirestore } from 'firebase/firestore';
-import { initializeApp } from 'firebase/app';
-import firebaseConfig from '../config/firebaseConfig';
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const coll = collection(db, 'notes');
 
 function Add() {
   // State to hold the note data
@@ -36,7 +28,7 @@ function Add() {
   };
 
   // Function to handle form submit
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
 
     if (!note.title || !note.content) {
@@ -45,14 +37,20 @@ function Add() {
       return;
     }
 
-    try {
-      await addDoc(coll, note);
-      setSuccessMessage('Added');
-      clearSuccessMessage();
-      console.log('Add Notes Success');
-    } catch (error) {
-      console.error('Error adding note: ', error);
-    }
+    // Get the existing notes from local storage
+    const existingNotes = JSON.parse(localStorage.getItem('notes')) || [];
+
+    // Generate a unique id for the new note
+    const newId = new Date().getTime();
+
+    // Add the new note with the generated id to the existing notes
+    existingNotes.push({ ...note, id: newId });
+
+    // Store the updated notes in local storage
+    localStorage.setItem('notes', JSON.stringify(existingNotes));
+
+    setSuccessMessage('Added');
+    clearSuccessMessage();
 
     setNote({ title: '', content: '' });
     setErrorMessage('');
