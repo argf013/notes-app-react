@@ -1,10 +1,10 @@
 # Notes App
 
-A simple note-taking application using React and Firebase.
+A simple note-taking application using React(localStorage).
 
 ## Live Preview
 
-Check out the live preview of the application here: [Notes App](https://notesv1-0.web.app)
+Check out the live preview of the application here: [Notes App](https://notes-b1523.web.app/)
 
 ## Installation
 
