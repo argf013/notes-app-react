@@ -4,37 +4,23 @@
 
 import React, { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
-import {
-  collection,
-  deleteDoc,
-  doc,
-  getFirestore,
-  onSnapshot,
-  orderBy,
-  query,
-} from 'firebase/firestore';
-import { initializeApp } from 'firebase/app';
-import firebaseConfig from '../config/firebaseConfig';
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const coll = collection(db, 'notes');
-const q = query(coll, orderBy('title', 'asc'));
 
 function View() {
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
-    const unsubscribe = onSnapshot(q, (snapshot) => {
-      setNotes(
-        // eslint-disable-next-line no-shadow
-        snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })),
-      );
-    }); return () => unsubscribe();
+    const fetchData = () => {
+      setNotes(JSON.parse(localStorage.getItem('notes')) || []);
+    };
+    fetchData();
+    const intervalId = setInterval(fetchData, 500);
+    return () => clearInterval(intervalId);
   }, []);
 
-  const handleDelete = async (id) => {
-    await deleteDoc(doc(db, 'notes', id));
+  const handleDelete = (id) => {
+    const updatedNotes = notes.filter((note) => note.id !== id);
+    setNotes(updatedNotes);
+    localStorage.setItem('notes', JSON.stringify(updatedNotes));
   };
 
   const handleClick = (id) => {
